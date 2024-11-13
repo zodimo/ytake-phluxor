@@ -248,7 +248,6 @@ function main(): void
         }, $system);
     });
 }
-
 ```
 
 ## Persistent Actors
