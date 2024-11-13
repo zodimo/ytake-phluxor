@@ -6,7 +6,8 @@ namespace Phluxor\ActorSystem\Dispatcher;
 
 use Closure;
 
-use function go;
+
+use function Swoole\Coroutine\go;
 
 readonly class CoroutineDispatcher implements DispatcherInterface
 {

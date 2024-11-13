@@ -16,6 +16,7 @@ use Swoole\Coroutine\WaitGroup;
 use Test\MockContext;
 use Test\ProcessTrait;
 
+use function Swoole\Coroutine\go;
 use function Swoole\Coroutine\run;
 
 class GroupRouterActorTest extends TestCase

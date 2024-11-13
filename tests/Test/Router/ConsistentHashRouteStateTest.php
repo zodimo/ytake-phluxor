@@ -18,6 +18,7 @@ use Test\ProcessTrait;
 use Test\Router\ConsistentHash\HashMessage;
 use Test\Router\ConsistentHash\ReceiveCount;
 
+use function Swoole\Coroutine\go;
 use function Swoole\Coroutine\run;
 
 class ConsistentHashRouteStateTest extends TestCase

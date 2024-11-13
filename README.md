@@ -15,9 +15,9 @@ do not use this in production yet.
 [demonstrates how to use Phluxor with Event Sourcing and CQRS.](https://github.com/ytake/phluxor-example-event-sourcing-cqrs)  
 [Documentation](https://phluxor.github.io/en/guide/)
 
-PhluxorはPHPでのアクターモデルを実現するためのツールキットです。    
-PHP 8.3 と swooleが必要です。  
-メッセージのシリアライズには、Protocol Buffersを利用します。  
+Phluxor は PHP でのアクターモデルを実現するためのツールキットです。  
+PHP 8.3 と swoole が必要です。  
+メッセージのシリアライズには、Protocol Buffers を利用します。  
 他のシリアライズフォーマットはまだサポートされていません。
 
 ## Installation
@@ -38,9 +38,9 @@ $ composer require phluxor/phluxor
 - event stream
 - future
 - persistent actors (in memory / mysql)
-- [OpenTelemetry](https://opentelemetry.io/docs/languages/php/) support (metrics) 
+- [OpenTelemetry](https://opentelemetry.io/docs/languages/php/) support (metrics)
 - router / round-robin, broadcast, scatter-gather, etc.
-- [remoting](https://github.com/ytake/phluxor-remote) / Remoting is the mechanism by which Actors on different nodes talk to each other internally.  
+- [remoting](https://github.com/ytake/phluxor-remote) / Remoting is the mechanism by which Actors on different nodes talk to each other internally.
 
 ## work in progress
 
@@ -231,7 +231,7 @@ use Phluxor\ActorSystem\Props;
 use function Swoole\Coroutine\go;
 use function Swoole\Coroutine\run;
 
-function main(): void 
+function main(): void
 {
     run(function () {
         $system = ActorSystem::create();
@@ -255,14 +255,14 @@ function main(): void
 
 パーシステンスアクターは、以前の状態から復元できるアクターです。  
 永続化に利用するデータベースは、お使いの環境などに合わせて自由にアダプターを実装することができます。  
-デフォルトではインメモリとMySQLが実装されています。  
-メッセージのシリアライズには、Protocol Buffersを利用しますので、事前にProtocol Buffersのファイルを用意しておく必要があります。
-以下はサンプルのProtocol Buffersファイルです。
+デフォルトではインメモリと MySQL が実装されています。  
+メッセージのシリアライズには、Protocol Buffers を利用しますので、事前に Protocol Buffers のファイルを用意しておく必要があります。
+以下はサンプルの Protocol Buffers ファイルです。
 
 persistent actors are actors that can be restored from the previous state.  
-you can implement an adapter freely according to your environment for the database used for persistence.    
+you can implement an adapter freely according to your environment for the database used for persistence.  
 by default, in-memory and MySQL are implemented.  
-Protocol Buffers is used for message serialization, so you need to prepare a Protocol Buffers file in advance.    
+Protocol Buffers is used for message serialization, so you need to prepare a Protocol Buffers file in advance.
 
 for example, the protocol buffers file is like this.
 
@@ -284,7 +284,7 @@ message Snapshot {
 
 ```
 
-詳しい永続化の使い方は、永続アクターのサンプルを参照してください。[Persistence / MySQL](example/persistence/SampleSystem.php)  
+詳しい永続化の使い方は、永続アクターのサンプルを参照してください。[Persistence / MySQL](example/persistence/SampleSystem.php)
 
 for example, the persistent actor is like this. [Persistence / MySQL](example/persistence/SampleSystem.php)
 

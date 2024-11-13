@@ -11,6 +11,7 @@ use Phluxor\Router\Message\Broadcast;
 use PHPUnit\Framework\TestCase;
 use Test\ProcessTrait;
 
+use function Swoole\Coroutine\go;
 use function Swoole\Coroutine\run;
 
 class ProcessTest extends TestCase

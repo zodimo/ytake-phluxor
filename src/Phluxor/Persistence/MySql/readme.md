@@ -1,6 +1,6 @@
 # Phluxor MySQL Persistence Adapter
 
-persisting Phluxor actor state to a MySQL database.  
+persisting Phluxor actor state to a MySQL database.
 
 This package provides a MySQL persistence layer for Phluxor.
 
@@ -72,14 +72,14 @@ use Phluxor\Persistence\Mysql\MysqlProvider;
 use Psr\Log\LoggerInterface;
 use Test\Persistence\ProtoBuf\TestMessage;
 
+use function Swoole\Coroutine\go;
 use function Swoole\Coroutine\run;
-
 class SampleSystem
 {
     public function main(): void
     {
         run(function () {
-            \Swoole\Coroutine\go(function () {
+            go(function () {
                 $system = ActorSystem::create();
                 $props = ActorSystem\Props::fromProducer(fn() => new PersistenceActor(),
                     ActorSystem\Props::withReceiverMiddleware(
@@ -117,7 +117,7 @@ class SampleSystem
 
 # Default table schema
 
-use ULID as id(varchar(26)) and BYTEA as payload.  
+use ULID as id(varchar(26)) and BYTEA as payload.
 
 see [Default Schema](DefaultSchema.php)
 
@@ -151,7 +151,7 @@ CREATE TABLE snapshots
 
 ## change table name
 
-for journal table and snapshot table, you can change table name by implementing `Phluxor\Persistence\RdbmsSchemaInterface`.  
+for journal table and snapshot table, you can change table name by implementing `Phluxor\Persistence\RdbmsSchemaInterface`.
 
 ```php
 <?php

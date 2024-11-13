@@ -5,7 +5,7 @@ namespace Test\ActorSystem;
 use Phluxor\ActorSystem\ConcurrentMap;
 use PHPUnit\Framework\TestCase;
 
-use function go;
+use function Swoole\Coroutine\go;
 
 class ConcurrentMapTest extends TestCase
 {

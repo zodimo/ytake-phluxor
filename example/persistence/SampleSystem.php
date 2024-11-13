@@ -13,14 +13,14 @@ use Phluxor\Persistence\MySql\MysqlProvider;
 use Psr\Log\LoggerInterface;
 use Test\Persistence\ProtoBuf\TestMessage;
 
+use function Swoole\Coroutine\go;
 use function Swoole\Coroutine\run;
-
 class SampleSystem
 {
     public function main(): void
     {
         run(function () {
-            \Swoole\Coroutine\go(function () {
+            go(function () {
                 $system = ActorSystem::create();
                 $props = ActorSystem\Props::fromProducer(fn() => new PersistenceActor(),
                     ActorSystem\Props::withReceiverMiddleware(

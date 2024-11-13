@@ -12,6 +12,7 @@ use Phluxor\Router\ProtoBuf\Routees;
 use Phluxor\Router\RoundRobin\PoolRouter;
 use PHPUnit\Framework\TestCase;
 
+use function Swoole\Coroutine\go;
 use function Swoole\Coroutine\run;
 
 class PoolRouterTest extends TestCase

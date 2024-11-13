@@ -11,11 +11,14 @@ use Phluxor\ActorSystem\Mailbox\UnboundedLochFree;
 use PHPUnit\Framework\TestCase;
 use Swoole\Coroutine;
 
+use function Swoole\Coroutine\go;
+use function Swoole\Coroutine\run;
+
 class DefaultMailboxTest extends TestCase
 {
     public function testUnboundedLockFreeMailboxUserMessageConsistency(): void
     {
-        Coroutine\run(function () {
+        run(function () {
             go(function () {
                 $mspc = new MspcQueue();
                 $max = 1000;
@@ -54,7 +57,7 @@ class DefaultMailboxTest extends TestCase
 
     public function testUnboundedLockFreeMailboxSystemMessageConsistency(): void
     {
-        Coroutine\run(function () {
+        run(function () {
             go(function () {
                 $mspc = new MspcQueue();
                 $max = 1000;
@@ -87,7 +90,7 @@ class DefaultMailboxTest extends TestCase
 
     public function testBoundedMailbox(): void
     {
-        Coroutine\run(function () {
+        run(function () {
             $mailbox = new BoundedMailboxQueue(3, false);
             $mailbox->push(1);
             $mailbox->push(2);
@@ -99,7 +102,7 @@ class DefaultMailboxTest extends TestCase
 
     public function testBoundedDroppingMailbox(): void
     {
-        Coroutine\run(function () {
+        run(function () {
             $mailbox = new BoundedMailboxQueue(3, true);
             $mailbox->push(1);
             $mailbox->push(2);

@@ -16,6 +16,7 @@ use PHPUnit\Framework\TestCase;
 use Swoole\Coroutine\WaitGroup;
 use Test\VoidActor;
 
+use function Swoole\Coroutine\go;
 use function Swoole\Coroutine\run;
 
 class PropsTest extends TestCase

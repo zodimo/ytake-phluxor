@@ -8,6 +8,7 @@ use Phluxor\ActorSystem;
 use PHPUnit\Framework\TestCase;
 use Test\VoidActor;
 
+use function Swoole\Coroutine\go;
 use function Swoole\Coroutine\run;
 
 class SpawnFunctionTest extends TestCase

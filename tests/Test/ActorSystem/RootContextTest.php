@@ -7,6 +7,7 @@ namespace Test\ActorSystem;
 use Phluxor\ActorSystem;
 use PHPUnit\Framework\TestCase;
 
+use function Swoole\Coroutine\go;
 use function Swoole\Coroutine\run;
 
 class RootContextTest extends TestCase

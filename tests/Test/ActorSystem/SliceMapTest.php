@@ -8,7 +8,7 @@ use Phluxor\ActorSystem\ConcurrentMapShared;
 use PHPUnit\Framework\TestCase;
 use Phluxor\ActorSystem\SliceMap;
 
-use function go;
+use function Swoole\Coroutine\go;
 use function Swoole\Coroutine\run;
 
 class SliceMapTest extends TestCase

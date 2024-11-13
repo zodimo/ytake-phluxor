@@ -17,6 +17,7 @@ use Swoole\Coroutine\WaitGroup;
 use Test\NullProducer;
 use Test\ProcessTrait;
 
+use function Swoole\Coroutine\go;
 use function Swoole\Coroutine\run;
 
 class ActorContextTest extends TestCase

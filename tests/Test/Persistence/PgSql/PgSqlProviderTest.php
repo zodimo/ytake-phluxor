@@ -12,6 +12,7 @@ use PHPUnit\Framework\TestCase;
 
 use Test\Persistence\ProtoBuf\UserCreated;
 
+use function Swoole\Coroutine\go;
 use function Swoole\Coroutine\run;
 
 class PgSqlProviderTest extends TestCase

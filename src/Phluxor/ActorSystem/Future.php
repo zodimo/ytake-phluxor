@@ -13,7 +13,7 @@ use Phluxor\Metrics\PhluxorMetrics;
 use Swoole\Coroutine\Channel;
 use Swoole\Timer;
 
-use function go;
+use function Swoole\Coroutine\go;
 
 class Future
 {

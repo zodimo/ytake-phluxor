@@ -14,6 +14,9 @@ use Phluxor\ActorSystem\Dispatcher\CoroutineDispatcher;
 use PHPUnit\Framework\TestCase;
 use Swoole\Coroutine;
 
+use function Swoole\Coroutine\go;
+use function Swoole\Coroutine\run;
+
 class BatchingMailboxTest extends TestCase
 {
     private function batchingMailbox(): BatchingMailbox
@@ -34,7 +37,7 @@ class BatchingMailboxTest extends TestCase
 
     public function testUnboundedLockFreeMailboxUserMessageConsistency(): void
     {
-        Coroutine\run(function () {
+        run(function () {
             go(function () {
                 $mspc = new MspcQueue();
                 $max = 100;
@@ -72,7 +75,7 @@ class BatchingMailboxTest extends TestCase
 
     public function testUnboundedLockFreeMailboxSystemMessageConsistency(): void
     {
-        Coroutine\run(function () {
+        run(function () {
             go(function () {
                 $max = 1000;
                 $c = 100;

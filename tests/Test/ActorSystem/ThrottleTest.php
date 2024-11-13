@@ -9,6 +9,7 @@ use Phluxor\ActorSystem\Valve;
 use PHPUnit\Framework\TestCase;
 use Swoole\Coroutine\WaitGroup;
 
+use function Swoole\Coroutine\go;
 use function Swoole\Coroutine\run;
 
 class ThrottleTest extends TestCase

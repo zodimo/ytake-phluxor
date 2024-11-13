@@ -7,6 +7,8 @@ namespace Test\Buffer;
 use Phluxor\Buffer\Queue;
 use PHPUnit\Framework\TestCase;
 
+use function Swoole\Coroutine\go;
+
 class QueueTest extends TestCase
 {
     public function testPushPop(): void

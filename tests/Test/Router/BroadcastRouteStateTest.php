@@ -15,6 +15,7 @@ use Test\ProcessTrait;
 use Test\Router\ConsistentHash\Received;
 use Test\VoidActor;
 
+use function Swoole\Coroutine\go;
 use function Swoole\Coroutine\run;
 
 class BroadcastRouteStateTest extends TestCase
